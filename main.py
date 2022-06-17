@@ -83,7 +83,7 @@ def add_car():
 
 
 
-# Get all car
+# Get all cars
 @app.route('/car', methods=['GET'])
 def get_cars():
     all_cars = Car.query.all()
@@ -93,7 +93,7 @@ def get_cars():
 
 
 
-# Get single products
+# Get single car
 @app.route('/car/<id>', methods=['GET'])
 def get_car(id):
     car = Car.query.get(id)
@@ -123,7 +123,7 @@ def update_car(id):
 
 
 
-# Delete single car
+# Delete  car
 @app.route('/car/<id>', methods=['DELETE'])
 def delete_car(id):
     car = Car.query.get(id)
@@ -131,7 +131,6 @@ def delete_car(id):
     db.session.delete(car)
     db.session.commit()
     return car_schema.jsonify(car)
-
 
 
 
@@ -190,13 +189,11 @@ def get_blogs():
     return jsonify(result)
 
 
-# Get single products
+# Get single blog
 @app.route('/blog/<id>', methods=['GET'])
 def get_blog(id):
     blog = Blog.query.get(id)
     return blog_schema.jsonify(blog)
-
-
 
 
 
@@ -224,7 +221,7 @@ def update_blog(id):
 
 
 
-# Delete single products
+# Delete blog
 @app.route('/blog/<id>', methods=['DELETE'])
 def delete_blog(id):
     blog = Blog.query.get(id)
@@ -233,7 +230,7 @@ def delete_blog(id):
     db.session.commit()
     return blog_schema.jsonify(blog)
 
-db.create_all()
+# db.create_all()
 
 
 
