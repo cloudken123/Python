@@ -25,7 +25,7 @@ app = Flask(__name__)
 
 
 #Databade
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///product.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SQLALCHEMY_BINDS'] = {'car':'sqlite:///car.db'}
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
